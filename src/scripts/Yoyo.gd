@@ -7,6 +7,8 @@ export var dmg: int
 var mouse_pos: Vector2
 var velocity: Vector2
 
+var hit: bool
+
 func _physics_process(delta):
 	velocity = Vector2.ZERO
 	mouse_pos = get_global_mouse_position()	
@@ -17,4 +19,5 @@ func _physics_process(delta):
 		return
 
 	velocity = move_and_slide(velocity)
+
 
