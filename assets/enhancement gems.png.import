@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/circle.png-b382e11189c60b49c24d10b162c8ce6f.stex"
+path="res://.import/enhancement gems.png-00776629b7f5953c8a1f7aafe03c21cc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/scenes/circle.png"
-dest_files=[ "res://.import/circle.png-b382e11189c60b49c24d10b162c8ce6f.stex" ]
+source_file="res://assets/enhancement gems.png"
+dest_files=[ "res://.import/enhancement gems.png-00776629b7f5953c8a1f7aafe03c21cc.stex" ]
 
 [params]
 

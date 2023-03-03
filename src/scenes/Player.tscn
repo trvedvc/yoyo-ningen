@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/yoyomage.png" type="Texture" id=2]
+[ext_resource path="res://assets/mage spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://src/scenes/Hurtbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/circle.png" type="Texture" id=4]
 
@@ -13,27 +13,83 @@ height = 2.0
 radius = 5.0
 height = 4.0
 
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MageSpritesheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "idle"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("MageSpritesheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "walk"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("MageSpritesheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 6, 7, 8, 5 ]
+}
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 7.07107
+
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 24
 script = ExtResource( 1 )
 
-[node name="Yoyomage" type="Sprite" parent="."]
+[node name="MageSpritesheet" type="Sprite" parent="."]
 position = Vector2( 0, -5 )
 texture = ExtResource( 2 )
+hframes = 5
+vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Range" type="KinematicBody2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Range"]
-visible = false
 polygon = PoolVector2Array( 0, -41, -10, -40, -18, -37, -26, -32, -32, -26, -37, -18, -40, -10, -41, 0, -40, 10, -37, 18, -32, 26, -26, 32, -18, 37, -10, 40, 0, 41, 10, 40, 18, 37, 26, 32, 32, 26, 37, 18, 40, 10, 41, 0, 40, -10, 37, -18, 32, -26, 26, -32, 20, -36, 10, -40, 1, -41, 41, -41, 42, 0, 41, 41, 0, 42, -41, 41, -42, 0, -41, -41 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( 0, -4 )
@@ -43,5 +99,20 @@ shape = SubResource( 2 )
 visible = false
 position = Vector2( 2, 2 )
 texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/RESET = SubResource( 3 )
+anims/idle = SubResource( 4 )
+anims/walk = SubResource( 5 )
+
+[node name="PickUpRange" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUpRange"]
+shape = SubResource( 6 )
+
+[connection signal="area_entered" from="PickUpRange" to="." method="_on_PickUpRange_area_entered"]
 
 [editable path="Hurtbox"]

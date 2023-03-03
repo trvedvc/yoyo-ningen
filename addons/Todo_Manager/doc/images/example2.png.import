@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/circle.png-b382e11189c60b49c24d10b162c8ce6f.stex"
+path="res://.import/example2.png-2e3a8f9cd1e178daf22b83dc0513f37a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/scenes/circle.png"
-dest_files=[ "res://.import/circle.png-b382e11189c60b49c24d10b162c8ce6f.stex" ]
+source_file="res://addons/Todo_Manager/doc/images/example2.png"
+dest_files=[ "res://.import/example2.png-2e3a8f9cd1e178daf22b83dc0513f37a.stex" ]
 
 [params]
 

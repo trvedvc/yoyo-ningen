@@ -5,7 +5,6 @@ onready var tween = get_node("Tween")
 var amount: float
 
 func _ready():
-	# TODO choose better font 
 	label.set_text(str(amount))
 	
 	tween.interpolate_property(self, 'scale', scale, Vector2(1,1), 0.2, Tween.TRANS_LINEAR,Tween.EASE_OUT)

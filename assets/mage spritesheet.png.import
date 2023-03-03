@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/circle.png-b382e11189c60b49c24d10b162c8ce6f.stex"
+path="res://.import/mage spritesheet.png-e6c1cd417d399d3e0735d0b37ce77fd3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/scenes/circle.png"
-dest_files=[ "res://.import/circle.png-b382e11189c60b49c24d10b162c8ce6f.stex" ]
+source_file="res://assets/mage spritesheet.png"
+dest_files=[ "res://.import/mage spritesheet.png-e6c1cd417d399d3e0735d0b37ce77fd3.stex" ]
 
 [params]
 

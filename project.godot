@@ -12,7 +12,7 @@ config_version=4
 
 config/name="yoyo ningen"
 run/main_scene="res://src/scenes/World.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/yoyo.png"
 
 [display]
 
@@ -26,6 +26,10 @@ window/stretch/mode="2d"
 
 version_control_autoload_on_startup=true
 version_control_plugin_name="GitAPI"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/Todo_Manager/plugin.cfg" )
 
 [gui]
 
@@ -77,6 +81,11 @@ right={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
+inventory={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [layer_names]
 
@@ -85,6 +94,7 @@ right={
 2d_physics/layer_3="yoyo"
 2d_physics/layer_4="enviroment"
 2d_physics/layer_5="enemy"
+2d_physics/layer_6="item"
 
 [physics]
 
