@@ -341,7 +341,7 @@ script = ExtResource( 5 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 3 )]
-speed = 69
+speed = 50
 
 [node name="Camera2D" type="Camera2D" parent="YSort/Player"]
 current = true
