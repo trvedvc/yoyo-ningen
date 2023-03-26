@@ -14,6 +14,10 @@ config/name="yoyo ningen"
 run/main_scene="res://src/scenes/World.tscn"
 config/icon="res://assets/yoyo.png"
 
+[autoload]
+
+gv="*res://src/scripts/Gv.gd"
+
 [display]
 
 window/size/width=160
@@ -99,7 +103,7 @@ spell={
 2d_physics/layer_3="yoyo"
 2d_physics/layer_4="enviroment"
 2d_physics/layer_5="enemy"
-2d_physics/layer_6="item"
+2d_physics/layer_6="arrow"
 2d_physics/layer_7="spell"
 
 [physics]

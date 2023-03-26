@@ -12,7 +12,7 @@ func _ready():
 func _process(delta):
 	clear_points()
 	
-	if player.direction == true: # TODO true = LEFT, learn singletons or whatever
+	if player.direction == gv.LEFT:
 		face = -1
 	else: face = 1
 	
